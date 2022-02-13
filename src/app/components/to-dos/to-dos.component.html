@@ -1,0 +1,10 @@
+<fieldset>
+  <legend>✅ / ⛔ ToDo list:</legend>
+
+  <label for="to-do">Add new todo</label>
+  <input type="text" id="to-do" />
+  
+  <ng-container *ngFor="let toDo of toDos">
+    <p>{{ toDo.firstName }}</p>
+  </ng-container>  
+</fieldset>
