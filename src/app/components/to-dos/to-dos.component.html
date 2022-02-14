@@ -1,17 +1,18 @@
-<fieldset>
-  <legend>✅ / ⛔ ToDo list:</legend>
-</fieldset>
 <div class="container">
+  <h2>✅ / ⛔ ToDo list:</h2>
+  <hr>
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Add new todo:</mat-label>
-    <input matInput #message maxlength="256" placeholder="Ex. Buy a milk...">
-    <!-- <mat-hint align="start"><strong>Don't disclose personal info</strong></mat-hint> -->
-    <!-- <mat-hint align="end">{{message.value.length}} / 256</mat-hint> -->
-    <button (click)="addToDo()">TEST</button>
+    <input matInput #message maxlength="256" placeholder="Ex. Buy a milk..." #data>
   </mat-form-field>
+  <button (click)="addToDo(data)">Add</button>
   
-  
-  <ng-container *ngFor="let toDo of toDos">
-    <p>{{ toDo.firstName }}</p>
-  </ng-container> 
+  <ng-container *ngIf="toDos.length == 0; else haveToDos">
+    <h1>Your list is empty...</h1>
+  </ng-container>
+
+  <ng-template #haveToDos>
+    <app-to-do [allToDos]="toDos"></app-to-do>
+  </ng-template>
 </div>

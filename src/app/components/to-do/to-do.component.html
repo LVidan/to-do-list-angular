@@ -1,0 +1,4 @@
+<ng-container *ngFor="let toDo of allToDos">
+  <p>{{ toDo }}</p>
+  <button (click)="removeToDo(toDo)">X</button>
+</ng-container>

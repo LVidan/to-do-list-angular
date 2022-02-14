@@ -9,14 +9,15 @@ import { TodosService } from 'src/app/todos.service';
 export class ToDosComponent implements OnInit {
 
   constructor(
-    public toDosService: TodosService
+    private toDosService: TodosService
   ) { }
 
-  toDos: any = this.toDosService.getToDos();
+  toDos: any[] = this.toDosService.getToDos();
 
   ngOnInit(): void { }
 
-  addToDo(): void {
-    console.log('alo');
+  addToDo(data: any): void {
+    this.toDos.push(data.value);
+    data.value = ''
   }
 }

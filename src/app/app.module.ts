@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './shared/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToDoComponent } from './components/to-do/to-do.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToDosComponent
+    ToDosComponent,
+    ToDoComponent
   ],
   imports: [
     BrowserModule,
