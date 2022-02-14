@@ -18,6 +18,6 @@ export class ToDosComponent implements OnInit {
 
   addToDo(data: any): void {
     this.toDos.push(data.value);
-    data.value = ''
+    data.value = "";
   }
 }
