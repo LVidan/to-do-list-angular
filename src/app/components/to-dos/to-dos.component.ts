@@ -12,18 +12,11 @@ export class ToDosComponent implements OnInit {
     public toDosService: TodosService
   ) { }
 
-  toDos: any;
-  errorMsg: string;
+  toDos: any = this.toDosService.getToDos();
 
-  ngOnInit(): void {
-    this.toDosService.getToDos().subscribe({
-      next: data => {
-        this.toDos = data;
-        console.log(this.toDos, this.toDos.length);
-      },
-      error: err => {
-        this.errorMsg = err;
-      }
-    })
+  ngOnInit(): void { }
+
+  addToDo(): void {
+    console.log('alo');
   }
 }

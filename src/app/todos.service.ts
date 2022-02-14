@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -7,13 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TodosService {
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor() { }
 
-  private URL_TODO: string = "./assets/json/toDos.json";
+  private allToDos: any[] = [];
 
   getToDos() {
-    return this.http.get(this.URL_TODO);
+    return this.allToDos;
   }
 }
