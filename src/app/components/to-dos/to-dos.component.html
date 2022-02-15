@@ -1,15 +1,21 @@
 <div class="container">
-  <h2>✅ / ⛔ ToDo list:</h2>
+  <hr>
+  <h2>✅ ToDo List:</h2>
   <hr>
 
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Add new todo:</mat-label>
-    <input matInput #message maxlength="256" placeholder="Ex. Buy a milk..." #data>
-  </mat-form-field>
-  <button (click)="addToDo(data)">Add</button>
+  <mat-card>
+    <mat-form-field appearance="outline" class="d-block w-100">
+      <mat-label>Add new todo:</mat-label>
+      <input matInput maxlength="256" placeholder="Ex. Buy a milk..." #data (keyup)="checkInput(data.value)">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="mb-2" (click)="addToDo(data)" [disabled]="isDisabled">ADD</button>
+  </mat-card>
   
   <ng-container *ngIf="toDos.length == 0; else haveToDos">
-    <h1>Your list is empty...</h1>
+    <mat-card class="mt-3">
+      <h2>🤔 Your ToDo list is empty...</h2> 
+    </mat-card>
   </ng-container>
 
   <ng-template #haveToDos>

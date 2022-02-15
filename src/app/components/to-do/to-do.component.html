@@ -1,4 +1,6 @@
 <ng-container *ngFor="let toDo of allToDos">
-  <p>{{ toDo }}</p>
-  <button (click)="removeToDo(toDo)">X</button>
+  <mat-card class="d-flex justify-content-between align-items-center mt-3">
+    <span>{{toDo}}</span>
+    <button mat-button color="warn" (click)="removeToDo(toDo)">X</button>
+  </mat-card>
 </ng-container>
